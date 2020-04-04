@@ -22,7 +22,8 @@ import java.util.Arrays;
 import java.util.List;
 
 public class MainApplication extends NavigationApplication {
-  private final ReactModuleRegistryProvider mModuleRegistryProvider = new ReactModuleRegistryProvider(new BasePackageList().getPackageList(), null);
+
+  private final ReactModuleRegistryProvider mModuleRegistryProvider = new ReactModuleRegistryProvider(new BasePackageList().getPackageList(), Arrays.<SingletonModule>asList());
 
   private final ReactNativeHost mReactNativeHost =
       new NavigationReactNativeHost(this) {
@@ -30,10 +31,7 @@ public class MainApplication extends NavigationApplication {
         public boolean getUseDeveloperSupport() {
           return BuildConfig.DEBUG;
         }
-        // List<ReactPackage> unimodules = Arrays.<ReactPackage>asList(
-        //   new ModuleRegistryAdapter(mModuleRegistryProvider)
-        // );
-        // packages.addAll(unimodules);
+
         @Override
         protected List<ReactPackage> getPackages() {
           @SuppressWarnings("UnnecessaryLocalVariable")

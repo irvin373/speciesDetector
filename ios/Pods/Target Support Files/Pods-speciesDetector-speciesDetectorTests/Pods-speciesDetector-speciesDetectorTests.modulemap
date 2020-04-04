@@ -1,0 +1,6 @@
+module Pods_speciesDetector_speciesDetectorTests {
+  umbrella header "Pods-speciesDetector-speciesDetectorTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

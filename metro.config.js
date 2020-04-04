@@ -1,13 +1,5 @@
-/**
- * Metro configuration for React Native
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
-// Change 1 (import the blacklist utility)
 const blacklist = require('metro-config/src/defaults/blacklist');
- 
+
 module.exports = {
   transformer: {
     getTransformOptions: async () => ({
@@ -18,10 +10,8 @@ module.exports = {
     }),
   },
   resolver: {
-    // Change 2 (add 'bin' to assetExts)
-    // assetExts: ['bin', 'txt', 'jpg'],
-    // sourceExts: ['js', 'json', 'ts', 'tsx', 'jsx'],
-    // Change 3 (add platform_node to blacklist)
+    assetExts: ['bin', 'txt', 'jpg', 'png'],
+    sourceExts: ['js', 'json', 'ts', 'tsx', 'jsx'],
     blacklistRE: blacklist([/platform_node/])
   },
 };
